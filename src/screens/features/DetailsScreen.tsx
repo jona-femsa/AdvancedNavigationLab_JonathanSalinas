@@ -1,5 +1,3 @@
-// src/screens/DestinationDetailsScreen.tsx
-
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { RouteProp } from "@react-navigation/native";
