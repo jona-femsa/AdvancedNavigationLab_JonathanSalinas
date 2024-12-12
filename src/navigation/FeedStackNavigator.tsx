@@ -1,10 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { FeedStackParamList } from './types';
-import HomeScreen from '../screens/main/HomeScreen';
-import SearchScreen from '../screens/features/SearchScreen';
-import DetailsScreen from '../screens/features/DetailsScreen';
 import Head from '../components/Head';
+import { ActivityIndicator } from 'react-native';
+
+const HomeScreen = lazy(() => import('../screens/main/HomeScreen'));
+const SearchScreen = lazy(() => import('../screens/features/SearchScreen'));
+const DetailsScreen = lazy(() => import('../screens/features/DetailsScreen'));
 
 type FeedStackNavigatorProps = {
     initialRouteName: keyof FeedStackParamList;
@@ -21,24 +23,38 @@ const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteNam
         }}
       >
         <Stack.Screen 
-          name='Home' 
-          component={ HomeScreen }
+          name='Home'
           options={{
             header: () => <Head title='Inicio'/>,
-          }}
-          />
+          }}>
+          {() => (
+            <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
+              <HomeScreen />
+            </Suspense>
+          )}
+        </Stack.Screen>
         <Stack.Screen 
-          name='Search' 
-          component={ SearchScreen }
+          name='Search'
           options={{
             header: () => <Head title='Buscar'/>,
-          }}/>
+          }}>
+          {() => (
+            <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
+              <SearchScreen />
+            </Suspense>
+          )}
+        </Stack.Screen>
         <Stack.Screen 
           name='Details'
-          component={ DetailsScreen }
           options={({route}) => ({
             header: () => <Head title={ route.params.name } showBackButton={ true }/>
-          })}/>
+          })}>
+          {({ route }) => (
+            <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
+              <DetailsScreen route={ route }/>
+            </Suspense>
+          )}
+        </Stack.Screen>
     </Stack.Navigator>
   )
 }
