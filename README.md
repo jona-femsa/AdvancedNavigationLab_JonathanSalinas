@@ -1,79 +1,59 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Lab: Advanced Navigation App
 
-# Getting Started
+Este es un proyecto de navegación avanzada en React Native. La aplicación maneja múltiples stacks de navegación y utiliza Redux para la gestión del estado de autenticación.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Estructura de Archivos
 
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+src/
+   components/ # Componentes reutilizables
+      Header.tsx # Encabezado
+      Head.tsx # Otro encabezado
+   navigation/ # Navegación de la app
+      AppDrawerNavigator.tsx # Navegador principal de la app (drawer)
+      AuthStackNavigator.tsx # Navegador para la autenticación (stack)
+      BottomTabNavigator # Navegador de Home (tabs)
+      FeedStackNavigator.tsx # Navegador del feed con lazy loading (stack)
+      RootNavigator.tsx # Navegador raíz que determina qué stack mostrar
+   screens/ # Pantallas de la aplicación
+      auth/ # Pantallas para flujo de autenticación
+         LoginScreen.tsx # Inicio de sesión
+         RegisterScreen.tsx # Registro de usuario
+      features/
+         SearchScreen.tsx # Pantalla para búsqueda
+         DetailsScreen.tsx # Pantalla de detalle
+         NotificationsScreen.tsx # Pantalla para notificaciones 
+      main/ # Pantallas principales
+         HomeScreen.tsx # Pantalla de inicio
+         ProfileScreen.tsx # Pantalla de perfil
+         SettingsScreen.tsx # Pantalla de configuración
+      store/ # Redux store
+         authSlice.ts # Reducer para la autenticación
+         index.ts # Configuración del store
 ```
 
-## Step 2: Start your Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Tecnologías Usadas
 
-### For Android
+- **React Native**: Framework para desarrollo móvil.
+- **React Navigation**: Para la gestión de la navegación de la app.
+- **Redux**: Para la gestión del estado global, especialmente para la autenticación.
+- **Lazy Loading**: Utilizado para cargar componentes solo cuando son necesarios.
+- **useMemo y memo**: Utilizados para optimizar el rendimiento de la aplicación.
 
-```bash
-# using npm
-npm run android
+## Instalación
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. Clonar este repositorio:
+   ```bash
+   git clone https://github.com/jona-femsa/AdvancedNavigationLab_JonathanSalinas
+2. Navegar a la carpeta del proyecto:
+   ```bash
+   cd AdvancedNavigationLab_JonathanSalinas
+3. Instalar las dependencias:
+   ```bash
+   npm install
+4. Ejecutar la aplicación en Android o iOS:
+   ```bash
+   npm run android
+   # o
+   npm run ios
