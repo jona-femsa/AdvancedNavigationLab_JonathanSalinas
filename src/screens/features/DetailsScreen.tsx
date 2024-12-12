@@ -17,11 +17,9 @@ const DetailsScreen: React.FC<Props> = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.subtitle}>Destination ID: {id}</Text>
+      <Text style={styles.subtitle}>ID: {id}</Text>
       <Text style={styles.description}>
-        Explore the beauty and culture of {name}. From iconic
-        landmarks to hidden gems, immerse yourself in an unforgettable
-        experience.
+        Eres amigo de { name } desde hace 5 años
       </Text>
     </View>
   );

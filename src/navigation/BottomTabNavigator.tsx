@@ -6,7 +6,7 @@ import SearchScreen from '../screens/features/SearchScreen';
 import NotificationsScreen from '../screens/features/NotificationsScreen';
 import FeedStackNavigator from './FeedStackNavigator';
 import Icon from '@react-native-vector-icons/feather';
-import CustomHeader from '../components/CustomHeader';
+import Head from '../components/Head';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -38,6 +38,8 @@ const BottomTabNavigator = () => {
           component={NotificationsScreen}
           options={{
             tabBarIcon: ({color, size}) => <Icon name='bell' size={size} color={color} />,
+            headerShown: true,
+            header: () => <Head title='Notificaciones'/>,
           }}
           />
     </Tab.Navigator>

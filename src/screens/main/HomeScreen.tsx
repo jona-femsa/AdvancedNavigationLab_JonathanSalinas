@@ -1,8 +1,10 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView } from "react-native";
 import { FeedStackParamList } from "../../navigation/types";
 import { useNavigation } from "@react-navigation/native";
+import Head from "../../components/Head";
+import Icon from "@react-native-vector-icons/feather";
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   FeedStackParamList,
@@ -10,9 +12,9 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 const items = [
-  { id: 1, name: "Paris" },
-  { id: 2, name: "New York" },
-  { id: 3, name: "Tokyo" },
+  { id: 1, name: "Ironman" },
+  { id: 2, name: "Scarlet Witch" },
+  { id: 3, name: "Spiderman" },
 ];
 
 const HomeScreen: React.FC = () => {
@@ -27,17 +29,19 @@ const HomeScreen: React.FC = () => {
         })
       }
     >
-      <Text style={styles.itemText}>{item.name}</Text>
+      <Icon name="thumbs-up" color="#033f63" size={22}/>
+      <Text style={styles.itemName}>{item.name}</Text>
     </TouchableOpacity>
   );
 
   return (
     <View style={styles.container}>
+      <Text style={styles.text}>Amigos</Text>
       <FlatList
-        data={items}
+        data={ items }
         keyExtractor={(item) => item.id.toString()}
-        renderItem={render}
-        contentContainerStyle={{ paddingBottom: 20 }}
+        renderItem={ render }
+        contentContainerStyle={{paddingBottom: 20}}
       />
     </View>
   );
@@ -46,24 +50,30 @@ const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     padding: 20,
+    backgroundColor: "#fff",
+  },
+  text: {
+    fontSize: 18,
+    color: '#033f63',
+    fontWeight: 'bold',
   },
   item: {
-    padding: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
-    backgroundColor: "#f9f9f9",
-    marginBottom: 5,
+    borderBottomColor: '#7c9885',
+    marginVertical: 5,
     borderRadius: 8,
   },
-  itemText: {
+  itemName: {
     fontSize: 18,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 10,
+    color: '#033f63',
+    fontWeight: 'bold',
+    marginLeft: 15,
   },
 });
 

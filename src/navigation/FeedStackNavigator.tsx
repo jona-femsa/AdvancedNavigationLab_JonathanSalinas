@@ -4,7 +4,7 @@ import { FeedStackParamList } from './types';
 import HomeScreen from '../screens/main/HomeScreen';
 import SearchScreen from '../screens/features/SearchScreen';
 import DetailsScreen from '../screens/features/DetailsScreen';
-import CustomHeader from '../components/CustomHeader';
+import Head from '../components/Head';
 
 type FeedStackNavigatorProps = {
     initialRouteName: keyof FeedStackParamList;
@@ -24,20 +24,20 @@ const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteNam
           name='Home' 
           component={ HomeScreen }
           options={{
-            headerShown: false,
+            header: () => <Head title='Inicio'/>,
           }}
           />
         <Stack.Screen 
           name='Search' 
           component={ SearchScreen }
           options={{
-            headerShown: false,
+            header: () => <Head title='Buscar'/>,
           }}/>
         <Stack.Screen 
           name='Details'
           component={ DetailsScreen }
           options={({route}) => ({
-            header: () => <CustomHeader title={ route.params.name } showBackButton={ true }/>
+            header: () => <Head title={ route.params.name } showBackButton={ true }/>
           })}/>
     </Stack.Navigator>
   )
