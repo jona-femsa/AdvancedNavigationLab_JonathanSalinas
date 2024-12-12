@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from '@react-native-vector-icons/feather';
 import { useNavigation } from '@react-navigation/native';
@@ -8,7 +8,7 @@ type HeadProps = {
   showBackButton?: boolean;
 };
 
-const Head: React.FC<HeadProps> = ({ title, showBackButton = false }) => {
+const Head: React.FC<HeadProps> = memo(({ title, showBackButton = false }) => {
   const navigation = useNavigation();
 
   return (
@@ -25,7 +25,7 @@ const Head: React.FC<HeadProps> = ({ title, showBackButton = false }) => {
       </View>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   headContainer: {
