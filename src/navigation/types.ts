@@ -14,3 +14,12 @@ export type DrawerParamList = {
     Profile: undefined,
     Settings: undefined,
 };
+
+export type FeedStackParamList = {
+    Home: undefined,
+    Search: undefined,
+    Details: {
+        id: number; 
+        name: string
+    }
+}

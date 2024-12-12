@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { RouteProp } from "@react-navigation/native";
+import { FeedStackParamList } from "../../navigation/types";
 
-// Define route prop type
 type DetailsRouteProp = RouteProp<
-  DiscoverStackParamList,
-  "DestinationDetails"
+  FeedStackParamList,
+  'Details'
 >;
 
 type Props = {
@@ -13,14 +13,14 @@ type Props = {
 };
 
 const DetailsScreen: React.FC<Props> = ({ route }) => {
-  const { destinationId, destinationName } = route.params;
+  const { id, name } = route.params;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{destinationName}</Text>
-      <Text style={styles.subtitle}>Destination ID: {destinationId}</Text>
+      <Text style={styles.title}>{ name }</Text>
+      <Text style={styles.subtitle}>Destination ID: {id}</Text>
       <Text style={styles.description}>
-        Explore the beauty and culture of {destinationName}. From iconic
+        Explore the beauty and culture of {name}. From iconic
         landmarks to hidden gems, immerse yourself in an unforgettable
         experience.
       </Text>
