@@ -3,6 +3,8 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
 import { AuthStackParamList } from "../../navigation/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice";
 
 type RegisterScreenNavigationProp = NativeStackNavigationProp<
   AuthStackParamList,
@@ -11,6 +13,7 @@ type RegisterScreenNavigationProp = NativeStackNavigationProp<
 
 const LoginScreen: React.FC = () => {
   const navigation = useNavigation<RegisterScreenNavigationProp>();
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.container}>
@@ -30,9 +33,9 @@ const LoginScreen: React.FC = () => {
       />
 
       <TouchableOpacity
-        style={ styles.item }
+        style={ styles.button }
         onPress={() => 
-          navigation.navigate('Register')
+          dispatch(login())
         }
       >
         <Text style={styles.itemName}>Iniciar sesión</Text>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
-  item: {
+  button: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
