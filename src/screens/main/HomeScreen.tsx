@@ -1,5 +1,5 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React from "react";
+import React, { useMemo } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView } from "react-native";
 import { FeedStackParamList } from "../../navigation/types";
 import { useNavigation } from "@react-navigation/native";
@@ -20,18 +20,21 @@ const items = [
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
-  const render = ({item}: { item: {id: number; name: string}}) => (
-    <TouchableOpacity
-      style={styles.item}
-      onPress={() => 
-        navigation.navigate('Details', {
-          id: item.id, name: item.name
-        })
-      }
-    >
-      <Icon name="thumbs-up" color="#033f63" size={22}/>
-      <Text style={styles.itemName}>{item.name}</Text>
-    </TouchableOpacity>
+  const render = useMemo(
+    () => ({item}: { item: {id: number; name: string}}) => (
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => 
+          navigation.navigate('Details', {
+            id: item.id, name: item.name
+          })
+        }
+      >
+        <Icon name="thumbs-up" color="#033f63" size={22}/>
+        <Text style={styles.itemName}>{item.name}</Text>
+      </TouchableOpacity>
+    ),
+    [navigation]
   );
 
   return (
