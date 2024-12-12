@@ -1,11 +1,11 @@
+import Icon from "@react-native-vector-icons/feather";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 const RegisterScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Register</Text>
-      <Text>Registro</Text>
+      <Icon name="wifi-off" color="#033f63" size={ 45 }/>
     </View>
   );
 };
@@ -16,10 +16,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 10,
+    backgroundColor: "#FFF"
   },
 });
 
