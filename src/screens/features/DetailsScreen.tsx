@@ -1,6 +1,7 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
+import React from 'react';
+import { StyleSheet,Text, View } from 'react-native';
+
 import { FeedStackParamList } from '../../navigation/types';
 
 type DetailsRouteProp = RouteProp<

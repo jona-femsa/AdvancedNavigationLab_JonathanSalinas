@@ -1,6 +1,7 @@
 import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { useSelector } from 'react-redux';
+
 import { RootState } from '../store';
 import AppDrawerNavigator from './AppDrawerNavigator';
 import AuthStackNavigator from './AuthStackNavigator';

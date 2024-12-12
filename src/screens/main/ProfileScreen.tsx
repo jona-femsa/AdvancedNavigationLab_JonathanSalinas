@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity,View } from 'react-native';
 import { useDispatch } from 'react-redux';
+
 import { logout } from '../../store/authSlice';
 
 const ProfileScreen: React.FC = () => {

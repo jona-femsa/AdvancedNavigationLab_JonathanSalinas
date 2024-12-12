@@ -1,9 +1,10 @@
+import Icon from '@react-native-vector-icons/feather';
+import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useMemo } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, TextInput } from 'react-native';
+import { FlatList, StyleSheet, Text, TextInput,TouchableOpacity, View } from 'react-native';
+
 import { FeedStackParamList } from '../../navigation/types';
-import { useNavigation } from '@react-navigation/native';
-import Icon from '@react-native-vector-icons/feather';
 
 type SearchScreenNavigationProp = NativeStackNavigationProp<
   FeedStackParamList,

@@ -1,9 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
-import { AuthStackParamList } from '../../navigation/types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from 'react';
+import { StyleSheet, Text, TextInput,TouchableOpacity, View } from 'react-native';
 import { useDispatch } from 'react-redux';
+
+import { AuthStackParamList } from '../../navigation/types';
 import { login } from '../../store/authSlice';
 
 type RegisterScreenNavigationProp = NativeStackNavigationProp<

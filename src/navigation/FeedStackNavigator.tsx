@@ -1,8 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { lazy, Suspense } from 'react';
-import { FeedStackParamList } from './types';
-import Head from '../components/Head';
 import { ActivityIndicator } from 'react-native';
+
+import Head from '../components/Head';
+import { FeedStackParamList } from './types';
 
 const HomeScreen = lazy(() => import('../screens/main/HomeScreen'));
 const SearchScreen = lazy(() => import('../screens/features/SearchScreen'));

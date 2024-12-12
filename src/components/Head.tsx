@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from '@react-native-vector-icons/feather';
 import { useNavigation } from '@react-navigation/native';
+import React, { memo } from 'react';
+import { StyleSheet, Text, TouchableOpacity,View } from 'react-native';
 
 type HeadProps = {
   title: string;

@@ -1,11 +1,12 @@
+import Icon from '@react-native-vector-icons/feather';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
-import { DrawerParamList } from './types';
-import BottomTabNavigator from './BottomTabNavigator';
-import SettingsScreen from '../screens/main/SettingsScreen';
-import ProfileScreen from '../screens/main/ProfileScreen';
-import Icon from '@react-native-vector-icons/feather';
+
 import Header from '../components/Header';
+import ProfileScreen from '../screens/main/ProfileScreen';
+import SettingsScreen from '../screens/main/SettingsScreen';
+import BottomTabNavigator from './BottomTabNavigator';
+import { DrawerParamList } from './types';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 

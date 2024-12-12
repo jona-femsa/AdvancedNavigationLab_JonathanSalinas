@@ -1,10 +1,11 @@
+import Icon from '@react-native-vector-icons/feather';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { BottomTabParamList } from './types';
+
+import Head from '../components/Head';
 import NotificationsScreen from '../screens/features/NotificationsScreen';
 import FeedStackNavigator from './FeedStackNavigator';
-import Icon from '@react-native-vector-icons/feather';
-import Head from '../components/Head';
+import { BottomTabParamList } from './types';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 

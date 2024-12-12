@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from '@react-native-vector-icons/feather';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { StyleSheet,Text, TouchableOpacity, View } from 'react-native';
 
 type HeaderProps = {
   title: string;
