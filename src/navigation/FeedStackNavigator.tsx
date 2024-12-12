@@ -1,5 +1,5 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import React, { lazy, Suspense } from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { lazy, Suspense } from 'react';
 import { FeedStackParamList } from './types';
 import Head from '../components/Head';
 import { ActivityIndicator } from 'react-native';
@@ -16,16 +16,16 @@ const Stack = createNativeStackNavigator<FeedStackParamList>();
 
 const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteName }) => {
   return (
-    <Stack.Navigator 
+    <Stack.Navigator
       initialRouteName={ initialRouteName }
       screenOptions={{
-        animation: "slide_from_right"
+        animation: 'slide_from_right',
         }}
       >
-        <Stack.Screen 
-          name='Home'
+        <Stack.Screen
+          name="Home"
           options={{
-            header: () => <Head title='Inicio'/>,
+            header: () => <Head title="Inicio"/>,
           }}>
           {() => (
             <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
@@ -33,10 +33,10 @@ const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteNam
             </Suspense>
           )}
         </Stack.Screen>
-        <Stack.Screen 
-          name='Search'
+        <Stack.Screen
+          name="Search"
           options={{
-            header: () => <Head title='Buscar'/>,
+            header: () => <Head title="Buscar"/>,
           }}>
           {() => (
             <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
@@ -44,10 +44,10 @@ const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteNam
             </Suspense>
           )}
         </Stack.Screen>
-        <Stack.Screen 
-          name='Details'
+        <Stack.Screen
+          name="Details"
           options={({route}) => ({
-            header: () => <Head title={ route.params.name } showBackButton={ true }/>
+            header: () => <Head title={ route.params.name } showBackButton={ true }/>,
           })}>
           {({ route }) => (
             <Suspense fallback={<ActivityIndicator size="large" color="#033f63"/>}>
@@ -56,7 +56,7 @@ const FeedStackNavigator: React.FC<FeedStackNavigatorProps> = ({ initialRouteNam
           )}
         </Stack.Screen>
     </Stack.Navigator>
-  )
-}
+  );
+};
 
-export default FeedStackNavigator
+export default FeedStackNavigator;

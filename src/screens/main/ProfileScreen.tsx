@@ -1,8 +1,7 @@
-import Icon from "@react-native-vector-icons/feather";
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useDispatch } from "react-redux";
-import { logout } from "../../store/authSlice";
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/authSlice';
 
 const ProfileScreen: React.FC = () => {
   const dispatch = useDispatch();
@@ -11,7 +10,7 @@ const ProfileScreen: React.FC = () => {
     <View style={styles.container}>
       <TouchableOpacity
         style={ styles.button }
-        onPress={() => 
+        onPress={() =>
           dispatch(logout())
         }
       >
@@ -24,9 +23,9 @@ const ProfileScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     padding: 20,
-    backgroundColor: "#FFF"
+    backgroundColor: '#FFF',
   },
   button: {
     flexDirection: 'row',

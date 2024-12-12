@@ -1,6 +1,6 @@
-import Icon from "@react-native-vector-icons/feather";
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import Icon from '@react-native-vector-icons/feather';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
 const SettingsScreen: React.FC = () => {
   return (
@@ -13,10 +13,10 @@ const SettingsScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     padding: 20,
-    backgroundColor: "#FFF"
+    backgroundColor: '#FFF',
   },
 });
 

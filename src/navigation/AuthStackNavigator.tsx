@@ -1,5 +1,5 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import LoginScreen from '../screens/auth/LoginScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen';
 import { AuthStackParamList } from './types';
@@ -11,21 +11,21 @@ const AuthStackNavigator: React.FC = () => {
   return (
     <Stack.Navigator>
         <Stack.Screen
-            name='Login'
+            name="Login"
             component={ LoginScreen }
             options={{
-              header: () => <Head title='Login'/>,
+              header: () => <Head title="Login"/>,
             }}
         />
         <Stack.Screen
-            name='Register'
+            name="Register"
             component={ RegisterScreen }
             options={{
-              header: () => <Head title='Registro' showBackButton={ true }/>,
+              header: () => <Head title="Registro" showBackButton={ true }/>,
             }}
         />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
-export default AuthStackNavigator
+export default AuthStackNavigator;

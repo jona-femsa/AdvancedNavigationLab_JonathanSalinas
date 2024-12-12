@@ -1,10 +1,10 @@
-import { useNavigation } from "@react-navigation/native";
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
-import { AuthStackParamList } from "../../navigation/types";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useDispatch } from "react-redux";
-import { login } from "../../store/authSlice";
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { AuthStackParamList } from '../../navigation/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useDispatch } from 'react-redux';
+import { login } from '../../store/authSlice';
 
 type RegisterScreenNavigationProp = NativeStackNavigationProp<
   AuthStackParamList,
@@ -18,13 +18,13 @@ const LoginScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Ingresa tus datos</Text>
-      <TextInput 
+      <TextInput
         style={styles.input}
         placeholder="User"
         value="jona"
         editable={false}
       />
-      <TextInput 
+      <TextInput
         style={styles.input}
         placeholder="Password"
         value="password"
@@ -34,17 +34,17 @@ const LoginScreen: React.FC = () => {
 
       <TouchableOpacity
         style={ styles.button }
-        onPress={() => 
+        onPress={() =>
           dispatch(login())
         }
       >
         <Text style={styles.itemName}>Iniciar sesión</Text>
       </TouchableOpacity>
-      
+
 
       <TouchableOpacity
         style={ styles.link }
-        onPress={() => 
+        onPress={() =>
           navigation.navigate('Register')
         }
       >
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   button: {
     flexDirection: 'row',

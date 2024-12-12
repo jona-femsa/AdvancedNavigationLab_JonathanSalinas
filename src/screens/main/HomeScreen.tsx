@@ -1,10 +1,9 @@
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React, { useMemo } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView } from "react-native";
-import { FeedStackParamList } from "../../navigation/types";
-import { useNavigation } from "@react-navigation/native";
-import Head from "../../components/Head";
-import Icon from "@react-native-vector-icons/feather";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { useMemo } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import { FeedStackParamList } from '../../navigation/types';
+import { useNavigation } from '@react-navigation/native';
+import Icon from '@react-native-vector-icons/feather';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   FeedStackParamList,
@@ -12,9 +11,9 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 const items = [
-  { id: 1, name: "Ironman" },
-  { id: 2, name: "Scarlet Witch" },
-  { id: 3, name: "Spiderman" },
+  { id: 1, name: 'Ironman' },
+  { id: 2, name: 'Scarlet Witch' },
+  { id: 3, name: 'Spiderman' },
 ];
 
 const HomeScreen: React.FC = () => {
@@ -24,9 +23,9 @@ const HomeScreen: React.FC = () => {
     () => ({item}: { item: {id: number; name: string}}) => (
       <TouchableOpacity
         style={styles.item}
-        onPress={() => 
+        onPress={() =>
           navigation.navigate('Details', {
-            id: item.id, name: item.name
+            id: item.id, name: item.name,
           })
         }
       >
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   text: {
     fontSize: 18,

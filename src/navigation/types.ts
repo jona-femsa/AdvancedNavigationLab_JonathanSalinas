@@ -20,7 +20,7 @@ export type FeedStackParamList = {
     Home: undefined,
     Search: undefined,
     Details: {
-        id: number; 
+        id: number;
         name: string
     }
 }

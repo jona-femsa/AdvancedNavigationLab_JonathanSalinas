@@ -1,9 +1,9 @@
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React, { useMemo } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, TextInput } from "react-native";
-import { FeedStackParamList } from "../../navigation/types";
-import { useNavigation } from "@react-navigation/native";
-import Icon from "@react-native-vector-icons/feather";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { useMemo } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, TextInput } from 'react-native';
+import { FeedStackParamList } from '../../navigation/types';
+import { useNavigation } from '@react-navigation/native';
+import Icon from '@react-native-vector-icons/feather';
 
 type SearchScreenNavigationProp = NativeStackNavigationProp<
   FeedStackParamList,
@@ -11,7 +11,7 @@ type SearchScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 const items = [
-  { id: 10, name: "Batman" },
+  { id: 10, name: 'Batman' },
 ];
 
 const SearchScreen: React.FC = () => {
@@ -21,9 +21,9 @@ const SearchScreen: React.FC = () => {
     () => ({item}: { item: {id: number; name: string}}) => (
       <TouchableOpacity
         style={styles.item}
-        onPress={() => 
+        onPress={() =>
           navigation.navigate('Details', {
-            id: item.id, name: item.name
+            id: item.id, name: item.name,
           })
         }
       >
@@ -36,7 +36,7 @@ const SearchScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput 
+      <TextInput
         style={styles.input}
         placeholder="Buscar"
         value="Bat..."
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   text: {
     fontSize: 18,
