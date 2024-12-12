@@ -17,7 +17,6 @@ const DetailsScreen: React.FC<Props> = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{ name }</Text>
       <Text style={styles.subtitle}>Destination ID: {id}</Text>
       <Text style={styles.description}>
         Explore the beauty and culture of {name}. From iconic
